@@ -1,15 +1,5 @@
 <?php
-	class Agency
-	{ 
-		public $name, $inn;
-		 
-		function displayInfo()
-		{
-			echo "Name: " . $this->name ."; Inn: " . $this->inn . "<br>";
-			// также можно написать
-			// echo "Name: $this->name; Age: $this->age<br>";
-		}
-	}
+	
 	
 	class DbConnectClass
 	{ 
@@ -20,8 +10,8 @@
 			try {
 				// подключаемся к серверу
 				$conn = new PDO("mysql:host=127.127.126.26", "root", "", array(PDO::ATTR_PERSISTENT => true));
-				echo "Database connection established <br>";
-				echo $conn->getAttribute(constant("PDO::ATTR_PERSISTENT"));
+		#		echo "Database connection established <br>";
+	#			echo $conn->getAttribute(constant("PDO::ATTR_PERSISTENT"));
 				$this->conn = $conn;				
 			}
 			catch (PDOException $e) {

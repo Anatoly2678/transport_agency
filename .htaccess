@@ -18,6 +18,8 @@ Header set X-Content-Type-Options nosniff
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteRule / index.php [R=301,L]
     RewriteRule test-page test.html [L,QSA]
+    RewriteRule agency-reg agency/agency-reg.php [L,QSA]
+    
     RewriteRule test.html none.php [L,QSA]
 </IfModule>
 
