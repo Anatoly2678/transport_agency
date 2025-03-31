@@ -39,7 +39,7 @@
             </div>
             <div class="col-6">
                 <label for="inputInn" class="form-label">ИНН</label>
-                <input type="text" class="form-control" id="inputInn" name="inputInn" placeholder="ИНН" required>
+                <input type="text" class="form-control" id="inputInn" name="inputInn" placeholder="ИНН" required minlength="10" maxlength="12" pattern="\d{10,12}">
             </div>
             <div class="col-md-6">
                 <label for="inputEmail" class="form-label">Email</label>
