@@ -33,12 +33,12 @@
                         Маршрут
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="/route/transport.php">Транспорт</a></li>
-                        <li><a class="dropdown-item" href="/route/route.php">Маршруты</a></li>
+                        <li><a class="dropdown-item" href="/route/Models/transport/transportReg.php">Транспорт</a></li>
+                        <li><a class="dropdown-item" href="/route/route.php">Направления</a></li>
                         <li>
                             <hr class="dropdown-divider">
                         </li>                       
-                        <li><a class="dropdown-item" href="/route/transport-route.php">Маршрут с прайсом</a></li>
+                        <li><a class="dropdown-item" href="/route/transport-route.php">Маршруты</a></li>
                     </ul>
                 </li>
                 <!-- <li class="nav-item">

@@ -27,6 +27,7 @@
                 </th>
             </tr>
         </thead>
+    </table>
 </body>
 
 <?php include( $_SERVER['DOCUMENT_ROOT']."/includes/modal-window.php");?>
@@ -37,7 +38,7 @@
 
 
 <script>
-  const $table = $('#table')
+const $table = $('#table')
 const $button = $('#button')
 const $customButton = $('#custom')
 

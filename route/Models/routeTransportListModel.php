@@ -1,7 +1,7 @@
 <?php
 class RouteTransportListModel
 { 
-    public $route, $transport, $price, $city_from, $city_to, $description_from, $description_to;
+    public $route, $transport, $price, $city_from, $city_to, $description_from, $description_to, $from, $to;
 
     public string $route_full;
 
@@ -16,8 +16,13 @@ class RouteTransportListModel
         if(!empty($this->description_to)) {
             $to = $to . "(".$this->description_to.")";
         }
-        $this->route_full = ($from."-".$to);
+        $this->route_full = ($from." - ".$to.". Транспорт:". $this->transport.". Цена:". $this->price);
     } 
+
+    // function displayInfo()
+    // {
+    //     echo($this->route_full);
+    // }
      
     function getActiveList($db) 
     {
@@ -31,7 +36,6 @@ class RouteTransportListModel
         $db->connectDb();
         $result = $db->select($sql);
         $data = $result->fetchAll(PDO::FETCH_CLASS, "RouteTransportListModel");
-        // echo json_encode($data);
         return $data;
     }
 }

@@ -14,8 +14,6 @@
     <?php
         if(isset($_POST["submit"]))
         {
-// print_r($_POST);
-
             $agency = new AgencyModel();
             $db = new DbConnectClass();
             $agency->insertSql($db);

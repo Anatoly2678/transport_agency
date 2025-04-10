@@ -20,9 +20,6 @@
         {
             $this->data_create_str = ($this->data_create);
             $this->data_create = strtotime($this->data_create);
-
-            // $salt = '%R|XoSMUjSz@sqoF';
-            // $this->uniq_id = encryptIt($this->uniq_id, $salt);
         } 
     }
     
