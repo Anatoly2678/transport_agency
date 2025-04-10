@@ -26,4 +26,4 @@ Header set X-Content-Type-Options nosniff
 ErrorDocument 500 http://foo.example.com/cgi-bin/tester
 ErrorDocument 404 /error/404.php
 ErrorDocument 401 /subscription_info.html
-ErrorDocument 403 "Доступ запрещён
+ErrorDocument 403 "Доступ запрещён!!"

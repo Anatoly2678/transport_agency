@@ -23,8 +23,22 @@
                         <li>
                             <hr class="dropdown-divider">
                         </li>
-                        <li><a class="dropdown-item" href="#">Кабинет</a></li>
-                        <li><a class="dropdown-item" href="#">Список</a></li>
+                        <li><a class="dropdown-item" href="/agency/agency-list-json.php">Кабинет</a></li>
+                        <li><a class="dropdown-item" href="/agency/agency-list.php">Список</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        Маршрут
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="/route/transport.php">Транспорт</a></li>
+                        <li><a class="dropdown-item" href="/route/route.php">Маршруты</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>                       
+                        <li><a class="dropdown-item" href="/route/transport-route.php">Маршрут с прайсом</a></li>
                     </ul>
                 </li>
                 <!-- <li class="nav-item">

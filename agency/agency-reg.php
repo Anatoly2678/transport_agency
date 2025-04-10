@@ -1,6 +1,6 @@
 <?php
     require $_SERVER['DOCUMENT_ROOT']."/connect/db_connect.php";
-    require $_SERVER['DOCUMENT_ROOT']."/agency/agencyModel.php";
+    require $_SERVER['DOCUMENT_ROOT']."/agency/Models/agencyModel.php";
 ?>
 <html lang="ru">
 
@@ -14,17 +14,11 @@
     <?php
         if(isset($_POST["submit"]))
         {
+// print_r($_POST);
+
             $agency = new AgencyModel();
-            $agency->name = $_POST["inputName"];
-            $agency->inn = $_POST["inputInn"];
-            $agency->email = $_POST["inputEmail"];
-            $agency->phone = $_POST["inputPhone"];
-            $agency->manager = $_POST["inputManager"];
-
-            $db = new DbConnectClass;
-            $db->connectDb();
-            $db->select($agency->insertSqlCreate());
-
+            $db = new DbConnectClass();
+            $agency->insertSql($db);
             echo $agency->displayInfo();           
         }
         else 

@@ -1,6 +1,4 @@
-<?php
-	
-	
+<?php	
 	class DbConnectClass
 	{ 
 		private $conn = null;
@@ -10,7 +8,6 @@
 			try {
 				// подключаемся к серверу
 				$conn = new PDO("mysql:host=127.127.126.26", "root", "", array(PDO::ATTR_PERSISTENT => true));
-		#		echo "Database connection established <br>";
 	#			echo $conn->getAttribute(constant("PDO::ATTR_PERSISTENT"));
 				$this->conn = $conn;				
 			}
@@ -19,8 +16,19 @@
 			}
 		}	
 		
+		function getConnect() {
+			return $this->conn;
+		}
+
 		function test() {
 			echo $this->conn->getAttribute(constant("PDO::ATTR_PERSISTENT"));
+		}
+
+		function create_uuid() {
+			$query = 'select uuid();';
+			$result = $this->conn->query($query);
+			$row = $result->fetch();
+        	return $row[0];
 		}
 
 		function select($sql)
@@ -37,4 +45,17 @@
 			return $result;
 		}		
 	}
+
+	function encryptIt( $val, $salt ) {
+		$cryptKey  = '34bc965a-44b8-4b47-8d04-99ea50235fbb';
+		$qEncoded = base64_encode($salt."-".$val."-".$cryptKey);
+		return( $qEncoded );
+	}
+	
+	function decryptIt( $val, $salt ) {
+		$cryptKey  = '34bc965a-44b8-4b47-8d04-99ea50235fbb';
+		$qDecoded  = base64_decode($val);
+		return( $qDecoded );
+	}
+
 ?>
