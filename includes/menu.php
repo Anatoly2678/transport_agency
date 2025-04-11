@@ -7,24 +7,18 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link" href="test">Заявка (агент)</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="test2">Заявка (физик)</a>
-                </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                         data-bs-toggle="dropdown" aria-expanded="false">
                         Агентство
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="/agency/agency-reg.php">Регистрация</a></li>
+                        <li><a class="dropdown-item" href="/agency/agencyReg.php">Регистрация</a></li>
                         <li>
                             <hr class="dropdown-divider">
                         </li>
-                        <li><a class="dropdown-item" href="/agency/agency-list-json.php">Кабинет</a></li>
-                        <li><a class="dropdown-item" href="/agency/agency-list.php">Список</a></li>
+                        <li><a class="dropdown-item" href="/agency/agencyCabinet.php">Кабинет</a></li>
+                        <li><a class="dropdown-item" href="/agency/agencyList.php">Список</a></li>
                     </ul>
                 </li>
                 <li class="nav-item dropdown">
@@ -37,10 +31,34 @@
                         <li><a class="dropdown-item" href="/route/route/routeReg.php">Направления</a></li>
                         <li>
                             <hr class="dropdown-divider">
-                        </li>                       
+                        </li>
                         <li><a class="dropdown-item" href="/route/transport-route.php">Маршруты</a></li>
                     </ul>
                 </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        Заявка
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="#">Физ лицо</a></li>
+                        <li><a class="dropdown-item" href="#">Агентство</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="#">Все заявки</a></li>
+                    </ul>
+                </li>
+
+                <!-- <li class="nav-item">
+                    <a class="nav-link" href="test">Заявка (агент)</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="test2">Заявка (физик)</a>
+                </li> -->
+
+
                 <!-- <li class="nav-item">
                         <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
                     </li> -->
