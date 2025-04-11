@@ -8,7 +8,7 @@ class TransportModel
         echo('<div class="container-md">');
         echo('<h3>ТС успешно зарегистрировано!</h3>');
         echo "Наименование: " . $this->name. ";<br>";
-        echo('<a href="/route/Models/transport/transportReg.php" class="btn btn-success">ЕЩЕ</a>');
+        echo('<a href="/route/transport/transportReg.php" class="btn btn-success">ЕЩЕ</a>');
         echo('<a href="/" class="btn btn-success">На главную</a>');
         echo('</div>');
     }

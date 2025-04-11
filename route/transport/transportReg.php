@@ -1,6 +1,6 @@
 <?php
     require $_SERVER['DOCUMENT_ROOT']."/connect/db_connect.php";
-    require $_SERVER['DOCUMENT_ROOT']."/route/Models/transport/transportModel.php";
+    require $_SERVER['DOCUMENT_ROOT']."/route/transport/transportModel.php";
     $db = new DbConnectClass();
     $transport = new TransportModel();
 ?>
