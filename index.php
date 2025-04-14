@@ -1,9 +1,24 @@
 <?php
+//use App\JWT;
+// error_reporting(0);
     require $_SERVER['DOCUMENT_ROOT']."/connect/db_connect.php";
     require $_SERVER['DOCUMENT_ROOT']."/route/Models/routeTransportListModel.php";
     require $_SERVER['DOCUMENT_ROOT']."/route/transport/transportModel.php";
-
+    // require $_SERVER['DOCUMENT_ROOT']."/login/loginModel.php";
     $db = new DbConnectClass();
+
+    // $login = new LoginModel();
+    // $loginResult = $login->login($db, '053320079694', '1');
+
+    // if($loginResult == false) {
+    //     echo "Ошибка: Пользователь не найден в бд!! <br>";
+    //     exit();
+    // }
+
+    // echo "Пользователь найден в бд! <br>";
+
+    // $login->CheckToken();
+
 ?>
 <html lang="ru">
 <?php $title ="ТурАгентство"; include( $_SERVER['DOCUMENT_ROOT']."/includes/head-contents.php");?>
@@ -60,6 +75,8 @@
 <!-- https://metanit.com/php/mysql/2.7.php -->
 <!-- https://metanit.com/php/tutorial/6.1.php -->
 <!-- https://examples.bootstrap-table.com/#extensions/key-events.html -->
+
+<!-- https://forum.diamondrp.ru/threads/jwt-avtorizacija-v-veb-prilozhenii-na-php.1526859/ -->
 
 <?php include( $_SERVER['DOCUMENT_ROOT']."/includes/footer-content.php");?>
 

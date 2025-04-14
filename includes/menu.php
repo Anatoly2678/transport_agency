@@ -1,3 +1,10 @@
+<?php
+    if (!class_exists('LoginModel')) { require $_SERVER['DOCUMENT_ROOT']."/login/loginModel.php"; }
+
+    $login = new LoginModel();
+    $checkToken = $login->CheckToken();
+?>
+
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
         <a class="navbar-brand" href="/">Главная</a>
@@ -50,14 +57,21 @@
                         <li><a class="dropdown-item" href="#">Все заявки</a></li>
                     </ul>
                 </li>
-
-                <!-- <li class="nav-item">
-                    <a class="nav-link" href="test">Заявка (агент)</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="test2">Заявка (физик)</a>
-                </li> -->
-
+                
+                <?php
+                    if($checkToken == false) {
+                ?>               
+                    <li class="nav-item">
+                        <a class="nav-link" href="/login/login.php">Авторизация</a>
+                    </li> 
+                <?php } ?>
+                <?php
+                    if($checkToken) {
+                ?>               
+                    <li class="nav-item">
+                        <a class="nav-link" href="/login/logout.php">Выход</a>
+                    </li>
+                <?php } ?>
 
                 <!-- <li class="nav-item">
                         <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
@@ -66,3 +80,4 @@
         </div>
     </div>
 </nav>
+

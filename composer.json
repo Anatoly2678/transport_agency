@@ -1,0 +1,5 @@
+{
+    "autoload": {
+        "classmap": ["Lib/Book/Example", "App/Controller", "App/Model"]
+    }
+}
