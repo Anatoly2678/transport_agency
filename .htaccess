@@ -17,10 +17,13 @@ Header set X-Content-Type-Options nosniff
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteRule / index.php [R=301,L]
-    RewriteRule test-page test.html [L,QSA]
-    RewriteRule agency-reg agency/agency-reg.php [L,QSA]
+    RewriteRule ^agency-registration$ agency/agencyReg.php [L,QSA]
+    RewriteRule ^agency-cabinet$ agency/agencyCabinet.php [L,QSA]
+    RewriteRule ^agency-list$ agency/agencyList.php [L,QSA]
+    RewriteRule ^agency-json$ agency/agency-list-json.php [L,QSA]
     
-    RewriteRule test.html none.php [L,QSA]
+##    RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /index\.php\ HTTP/
+##    RewriteRule ^index\.php$ http://transport.local/ [R=301,L]
 </IfModule>
 
 ErrorDocument 500 http://foo.example.com/cgi-bin/tester

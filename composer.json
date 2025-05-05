@@ -1,5 +1,20 @@
 {
     "autoload": {
-        "classmap": ["Lib/Book/Example", "App/Controller", "App/Model"]
-    }
+        "classmap": [
+            "connect/db_connect.php",
+            "jwt/JWT.php",
+            "jwt/Key.php",
+            "login/loginModel.php",
+            "route/Models/routeTransportListModel.php",
+            "route/transport/transportModel.php",            
+            "agency/Models/agencyModel.php",            
+            "route/route/routeModel.php",
+            "person/personModel.php",
+            "core/selectorComponent.php",
+            "application/applicationModel.php"            
+        ],
+        "files": [
+            "includes/global_variable.inc"
+        ]
+  }
 }

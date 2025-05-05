@@ -8,4 +8,6 @@
 
 <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.7.1.min.js" crossorigin="anonymous"></script>
 <script src="https://ajax.aspnetcdn.com/ajax/jquery.ui/1.10.4/jquery-ui.min.js" crossorigin="anonymous"></script>
+<script src="/javascript/js/jquery.validate.min.js" crossorigin="anonymous"></script>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap-table@1.24.1/dist/bootstrap-table.min.js" crossorigin="anonymous"></script>

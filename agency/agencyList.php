@@ -1,3 +1,7 @@
+<?php
+    require $_SERVER['DOCUMENT_ROOT'].'/vendor/autoload.php';
+?>
+<!DOCTYPE html>
 <html lang="ru">
 
 <?php $title ="Список агентств"; include( $_SERVER['DOCUMENT_ROOT']."/includes/head-contents.php");?>
@@ -5,16 +9,16 @@
 <body>
     <?php include( $_SERVER['DOCUMENT_ROOT']."/includes/menu.php");?>
     <!-- https://examples.bootstrap-table.com/#methods/filter-by.html#view-source -->
-    <div id="toolbar">
+    <!-- <div id="toolbar">
         <button id="button" class="btn btn-secondary">
             filterBy
         </button>
         <button id="custom" class="btn btn-secondary">
             filterBy custom
         </button>
-    </div>
-    <table data-toggle="table" data-url="agency-list-json.php" id="table" data-show-pagination-switch="true"
-        data-pagination="true" data-height="660">
+    </div> -->
+    <table data-toggle="table" data-url="agency-json" id="table" data-show-pagination-switch="true"
+        data-pagination="true" data-height="900">
         <thead>
             <tr>
                 <th data-field="uniq_id" data-visible="false">ИД</th>

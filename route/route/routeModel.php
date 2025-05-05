@@ -2,6 +2,7 @@
 class RouteModel
 {
     public $city_from, $city_to, $description_from, $description_to, $disabled, $from, $to;
+    public string $showName;
 
     public function __construct()
     {
@@ -14,6 +15,7 @@ class RouteModel
         if(!empty($this->description_to)) {
             $this->to = $this->to . " (".$this->description_to.")";
         }
+        $this->showName = ($this->from." - ".$this->to);
     }
 
     public function displayInfo()
@@ -31,7 +33,6 @@ class RouteModel
     {
         $db->connectDb();
         $sql = "INSERT INTO travel.route (city_from, city_to, description_from, description_to) VALUES('$this->city_from', '$this->city_to', '$this->description_from', '$this->description_to');";
-        var_dump($sql);
         $db->select($sql);
     }
 

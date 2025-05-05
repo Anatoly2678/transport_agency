@@ -1,7 +1,15 @@
 <?php
 class TransportModel
 { 
-    public $name;
+    public $id, $name;
+
+    public string $showName;
+
+    public function __construct()
+    {
+        if(!empty($this->name))
+            $this->showName = $this->name;
+    } 
      
     public function displayInfo()
     {

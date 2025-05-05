@@ -57,5 +57,3 @@
 		$qDecoded  = base64_decode($val);
 		return( $qDecoded );
 	}
-
-?>

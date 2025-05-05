@@ -1,6 +1,5 @@
 <?php
-require $_SERVER['DOCUMENT_ROOT'] . "/connect/db_connect.php";
-require $_SERVER['DOCUMENT_ROOT'] . "/route/route/routeModel.php";
+require $_SERVER['DOCUMENT_ROOT'].'/vendor/autoload.php';
 $db = new DbConnectClass();
 $route = new RouteModel();
 ?>
@@ -20,7 +19,7 @@ $route = new RouteModel();
         $route->description_from = $_POST['description_from'];
         $route->description_to = $_POST['description_to'];
         $route->Create($db);
-        echo $transport->displayInfo();
+        echo $route->displayInfo();
     } else {
         ?>
         <div class="container-md">
@@ -67,7 +66,6 @@ $route = new RouteModel();
 </html>
 
 <?php include($_SERVER['DOCUMENT_ROOT'] . "/includes/footer-content.php"); ?>
-
 
 <script>
     const $table = $('#table')

@@ -1,14 +1,14 @@
 <?php
-require $_SERVER['DOCUMENT_ROOT']."/jwt/JWT.php";
-require $_SERVER['DOCUMENT_ROOT']."/jwt/Key.php";
+require $_SERVER['DOCUMENT_ROOT'].'/vendor/autoload.php';
 use Firebase\JWT\JWT;
 use Firebase\JWT\Key;
 
 // Секретный ключ для подписи токена
-$secretKey = 'your_secret_key';
+global $secretKey;
+$secretKey = 'ma_secret_key';
 
 // Функция для генерации токена
-function generateToken($userId) {
+function generateToken($userId): string {
     global $secretKey;
     $tokenId    = base64_encode(random_bytes(32));
     $issuedAt   = time();
