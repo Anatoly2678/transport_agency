@@ -35,7 +35,7 @@ class AgencyModel
         $conn = $db->getConnect();
         $conn->beginTransaction();
         $uuid = $db->create_uuid();
-        $sql = "INSERT INTO travel.agency (name, inn, email, phone, manager, uniq_id, password, is_confirm) VALUES('$this->name', '$this->inn', '$this->email', '$this->phone', '$this->manager', '$uuid', '$this->password', 1);";
+        $sql = "INSERT INTO agency (name, inn, email, phone, manager, uniq_id, password, is_confirm) VALUES('$this->name', '$this->inn', '$this->email', '$this->phone', '$this->manager', '$uuid', '$this->password', 1);";
         $conn->exec($sql);
         $conn->commit();
         }
@@ -48,7 +48,7 @@ class AgencyModel
 
     public function GetAgencyInfoByUid($db, $uid) {
 
-        $sql = "Select id, name, inn, email, phone, manager from travel.agency where uniq_id='$uid' limit 1;";
+        $sql = "Select id, name, inn, email, phone, manager from agency where uniq_id='$uid' limit 1;";
         $db->connectDb();
         $result = $db->getConnect()->query($sql);
         foreach($result as $row) {

@@ -6,9 +6,9 @@ class RouteTransportListModel
  
     public function getActiveList($db) 
     {
-        $sql="SELECT r.id route_id, tt.name as transport, tt.id as transport_id, price, CONCAT (tt.name, ' (', price,' руб)') showName FROM travel.transport_route tr
-            inner join travel.route r on r.id = tr.route_id
-            inner join travel.transport_type tt on tt.id = tr.transport_type_id
+        $sql="SELECT r.id route_id, tt.name as transport, tt.id as transport_id, price, CONCAT (tt.name, ' (', price,' руб)') showName FROM transport_route tr
+            inner join route r on r.id = tr.route_id
+            inner join transport_type tt on tt.id = tr.transport_type_id
             where r.disabled = false 
             and tt.disabled  = false
             and tr.disabled  = false";

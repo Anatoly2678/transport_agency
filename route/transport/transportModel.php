@@ -24,14 +24,14 @@ class TransportModel
     public function Create($db) 
     {
         $db->connectDb();
-        $sql = "INSERT INTO travel.transport_type (name) VALUES('$this->name');";
+        $sql = "INSERT INTO transport_type (name) VALUES('$this->name');";
         $db->select($sql);
     }
 
     public function GetActiveList($db) 
     {
         $db->connectDb();
-        $sql = "SELECT id, name, disabled, data_create FROM travel.transport_type where disabled=false order by data_create;";
+        $sql = "SELECT id, name, disabled, data_create FROM transport_type where disabled=false order by data_create;";
         $result = $db->select($sql);
         $data = $result->fetchAll(PDO::FETCH_CLASS, "TransportModel");
         return $data;
@@ -40,7 +40,7 @@ class TransportModel
     public function GetAllList($db) 
     {
         $db->connectDb();
-        $sql = "SELECT id, name, disabled, data_create FROM travel.transport_type where 1=1 order by data_create;";
+        $sql = "SELECT id, name, disabled, data_create FROM transport_type where 1=1 order by data_create;";
         $result = $db->select($sql);
         $data = $result->fetchAll(PDO::FETCH_CLASS, "TransportModel");
         return $data;

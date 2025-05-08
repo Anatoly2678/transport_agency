@@ -2,12 +2,17 @@
 	class DbConnectClass
 	{ 
 		private $conn = null;
+		private $ip = "127.127.126.25"; // localhost6
+		private $port = 3306;
+		private $username = "root"; // vtolmach_v1
+		private $password = ""; // vtolmache28VO
+		private $database = "travel"; // vtolmach_travel
 		 
 		function connectDb()
 		{
 			try {
 				// подключаемся к серверу
-				$conn = new PDO("mysql:host=127.127.126.26", "root", "", array(PDO::ATTR_PERSISTENT => true));
+				$conn = new PDO("mysql:host=$this->ip;dbname=$this->database" , $this->username, $this->password, array(PDO::ATTR_PERSISTENT => true));
 	#			echo $conn->getAttribute(constant("PDO::ATTR_PERSISTENT"));
 				$this->conn = $conn;				
 			}

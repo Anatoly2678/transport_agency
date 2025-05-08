@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <?php
 //use App\JWT;
 require $_SERVER['DOCUMENT_ROOT'] . '/vendor/autoload.php';
@@ -14,7 +13,7 @@ if ($checkToken == false) {
 }
 ?>
 
-
+<!DOCTYPE html>
 <?php $title = "ТурАгентство";
 include($_SERVER['DOCUMENT_ROOT'] . "/includes/head-contents.php"); ?>
 

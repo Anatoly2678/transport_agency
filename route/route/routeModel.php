@@ -32,14 +32,14 @@ class RouteModel
     public function Create($db) 
     {
         $db->connectDb();
-        $sql = "INSERT INTO travel.route (city_from, city_to, description_from, description_to) VALUES('$this->city_from', '$this->city_to', '$this->description_from', '$this->description_to');";
+        $sql = "INSERT INTO route (city_from, city_to, description_from, description_to) VALUES('$this->city_from', '$this->city_to', '$this->description_from', '$this->description_to');";
         $db->select($sql);
     }
 
     public function GetActiveList($db) 
     {
         $db->connectDb();
-        $sql = "SELECT id, city_from, city_to, description_from, description_to, disabled, data_create FROM travel.route where disabled=false order by data_create;";
+        $sql = "SELECT id, city_from, city_to, description_from, description_to, disabled, data_create FROM route where disabled=false order by data_create;";
         $result = $db->select($sql);
         $data = $result->fetchAll(PDO::FETCH_CLASS, "RouteModel");
         return $data;
@@ -48,7 +48,7 @@ class RouteModel
     public function GetAllList($db) 
     {
         $db->connectDb();
-        $sql = "SELECT id, city_from, city_to, description_from, description_to, disabled, data_create FROM travel.route where 1=1 order by data_create;";
+        $sql = "SELECT id, city_from, city_to, description_from, description_to, disabled, data_create FROM route where 1=1 order by data_create;";
         $result = $db->select($sql);
         $data = $result->fetchAll(PDO::FETCH_CLASS, "RouteModel");
         return $data;

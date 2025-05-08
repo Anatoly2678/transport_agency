@@ -8,7 +8,7 @@ class LoginModel
     public function Login($db, $inn, $password): ?string
     {
         $db->connectDb();
-        $sql = "SELECT inn, name, email,is_confirm, disabled, password, uniq_id FROM travel.agency WHERE inn='$inn' and password='$password' and is_confirm and disabled = false;";
+        $sql = "SELECT inn, name, email,is_confirm, disabled, password, uniq_id FROM agency WHERE inn='$inn' and password='$password' and is_confirm and disabled = false;";
         $result = $db->select($sql);
         $data = $result->fetchAll(PDO::FETCH_CLASS, "LoginModel");
         if ($data == null) {

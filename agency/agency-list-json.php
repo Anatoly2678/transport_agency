@@ -24,7 +24,7 @@ class AgencyEntity
     }
 }
 
-$sql = "SELECT name, inn, email, phone, manager, uniq_id, data_create, is_confirm, disabled FROM travel.agency order by data_create";
+$sql = "SELECT name, inn, email, phone, manager, uniq_id, data_create, is_confirm, disabled FROM agency order by data_create";
 
 $db = new DbConnectClass;
 $db->connectDb();
