@@ -8,7 +8,7 @@ global $secretKey;
 $secretKey = 'ma_secret_key';
 
 // Функция для генерации токена
-function generateToken($userId): string {
+function generateToken($userId, $role): string {
     global $secretKey;
     $tokenId    = base64_encode(random_bytes(32));
     $issuedAt   = time();
@@ -24,6 +24,7 @@ function generateToken($userId): string {
         'exp'  => $expire,           // время истечения токена
         'data' => [
             'userId' => $userId,     // дополнительные данные о пользователе
+            'role' => $role
         ]
     ];
 
@@ -39,6 +40,17 @@ function validateToken($token) {
         return $decoded->data->userId; // возвращаем идентификатор пользователя
     } catch (Throwable $e) {
         // var_dump($e->getMessage());
+        return null; // токен недействителен
+    }
+}
+
+function getRole($token) {
+    global $secretKey;
+
+    try {
+        $decoded = JWT::decode($token, new Key($secretKey, 'HS256'));
+        return $decoded->data->role; // возвращаем роль
+    } catch (Throwable $e) {
         return null; // токен недействителен
     }
 }

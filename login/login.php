@@ -23,17 +23,27 @@ include($_SERVER['DOCUMENT_ROOT'] . "/includes/head-contents.php"); ?>
                 <div class="col-6">
                     <label for="inn" class="form-label">ИНН</label>
                     <input type="text" class="form-control" id="inn" name="inn" placeholder="ИНН" required minlength="10"
-                        maxlength="12" pattern="\d{10,12}" value="053320079694">
+                        maxlength="12" pattern="\d{10,12}" value="000000000000">
+                        <!-- 053320079694 -->
                 </div>
                 <div class="col-md-6">
                     <label for="password" class="form-label">Пароль</label>
-                    <input type="password" class="form-control" id="password" name="password" required value="1">
+                    <input type="password" class="form-control" id="password" name="password" required value="11">
+                    <!-- 1 -->
                 </div>
                 <div class="col-12">
                     <input type="hidden" name="is_submit" value="true">
                     <button type="submit" class="btn btn-primary" name="submit">Войти</button>
                 </div>
             </form>
+            <div class="row mt-3">
+                <div class="col">
+                    <a href="/agency-registration">Зарегистрироваться</a>
+                </div>
+                <div class="col">
+                    <a href="#">Восстановить пароль</a>
+                </div>
+            </div>
         </div>
     <?php } else { ?>
         <div class="container-md">
